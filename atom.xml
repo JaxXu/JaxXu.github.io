@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>JaxXu&#39;Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://jaxxu.github.io/"/>
+  <updated>2016-11-18T11:29:18.838Z</updated>
+  <id>http://jaxxu.github.io/</id>
+  
+  <author>
+    <name>Jax Xu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从Eclipse入坑IDEA(一)：IDEA导入SVN项目</title>
+    <link href="http://jaxxu.github.io/2016/11/18/%E4%BB%8EEclipse%E5%85%A5%E5%9D%91IDEA(%E4%B8%80)%EF%BC%9AIDEA%E5%AF%BC%E5%85%A5SVN%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://jaxxu.github.io/2016/11/18/从Eclipse入坑IDEA(一)：IDEA导入SVN项目/</id>
+    <published>2016-11-18T06:25:00.000Z</published>
+    <updated>2016-11-18T11:29:18.838Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>前言</strong>：自从用上了IDEA之后就再也回不去Eclipse了，为了愉快的和公司的小伙伴们协作，网上IDEA资料又偏少，索性自己捣鼓了一下，跟大家分享一下</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="安装SVN插件"><a href="#安装SVN插件" class="headerlink" title="安装SVN插件"></a>安装SVN插件</h2><ol>
+<li><p>下载插件<br>推荐使用<a href="https://sliksvn.com/download/" target="_blank" rel="external">sliksvn</a>插件，下载安装即用，及其方便。<a href="https://sliksvn.com/download/" target="_blank" rel="external">官网</a></p>
+</li>
+<li><p>配置SVN插件<br><code>File</code> → <code>Settings</code> 打开IDEA配置<br>找到<code>Version Control</code>，选择<code>Subversion</code><br>之后如下图在红框内填入SVN.exe地址</p>
+<blockquote>
+<p><strong>Tips</strong>:这里我把路径加入了环境变量，所以填的svn</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://ogtt5pngo.bkt.clouddn.com/image/svn_setter.png" alt="svn路径配置"></p>
+<h2 id="从SVN导出项目"><a href="#从SVN导出项目" class="headerlink" title="从SVN导出项目"></a>从SVN导出项目</h2><ol>
+<li><p>选择<code>Check out from Version Control</code> -&gt; <code>Subversion</code><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_1.png" alt="从SVN导出项目1"></p>
+</li>
+<li><p>添加SVN仓库地址<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_2.png" alt="从SVN导出项目2"></p>
+</li>
+<li><p>选择刚才添加的仓库，选择<code>Checkout</code><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_3.png" alt="从SVN导出项目3"></p>
+</li>
+<li><p>选择一个路径存放导出的文件<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_4.png" alt="从SVN导出项目4"></p>
+</li>
+<li><p>选择具体路径与一些其他选项<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_5.png" alt="从SVN导出项目5"></p>
+</li>
+<li><p>选择JDK版本<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_6.png" alt="从SVN导出项目6"></p>
+</li>
+<li><p>然后开始漫长的等待<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_7.png" alt="从SVN导出项目7"></p>
+</li>
+<li><p>最后这里弹出已经引入项目,是否打开.选NO<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_8.png" alt="从SVN导出项目8"></p>
+</li>
+<li><p>点击Import Project<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_9.png" alt="从SVN导出项目9"></p>
+</li>
+<li><p>选择刚才导出的路径<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_10.png" alt="从SVN导出项目10"></p>
+</li>
+<li><p>然后一路next<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/daochu_11.png" alt="从SVN导出项目11"></p>
+</li>
+</ol>
+<blockquote>
+<p>到此,导入Eclipse项目结束.</p>
+</blockquote>
+<h2 id="配置与运行项目"><a href="#配置与运行项目" class="headerlink" title="配置与运行项目"></a>配置与运行项目</h2><ol>
+<li><p>添加Tomcat服务器<br>选择<code>Run</code> -&gt; <code>EditConfigurations..</code>然后选择添加<code>TomcatServer</code> -&gt; <code>local</code><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/addtomcat_1.png" alt="添加Tomcat"><br>选择热部署<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/addtomcat_2.png" alt="添加Tomcat"></p>
+</li>
+<li><p>打开<code>Project Structure</code> 在右上角有快捷方式<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_1.png" alt="配置项目1"></p>
+</li>
+<li><p>可以看到如下图,这里的不用管<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_2.png" alt="配置项目1"></p>
+</li>
+<li><p>选择右边<code>Modules</code>添加<code>Tomcat</code><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_3.png" alt="配置项目1"><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_4.png" alt="配置项目1"></p>
+</li>
+<li><p>选择右边<code>Artifacts</code>，先选<code>Web Application exploded</code>添加上自己模块的导出war<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_5.png" alt="配置项目1"><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_6.png" alt="配置项目1"><br>然后再把生成的exploded 加入到Archive中.<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_7.png" alt="配置项目1"></p>
+</li>
+<li><p>再次进入通过选择<code>Run</code> -&gt; <code>EditConfigurations..</code>进入Tomcat配置,选择<code>Deployment</code>选项卡,选择添加<code>Artifact</code><br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_8.png" alt="配置项目1"><br>选择第二个,点ok<br><img src="http://ogtt5pngo.bkt.clouddn.com/image/peizhi_9.png" alt="配置项目1"></p>
+</li>
+</ol>
+<blockquote>
+<p>到此,已经全部完成整个流程,可以愉快的开始IDEA之旅了~</p>
+</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;：自从用上了IDEA之后就再也回不去Eclipse了，为了愉快的和公司的小伙伴们协作，网上IDEA资料又偏少，索性自己捣鼓了一下，跟大家分享一下&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
