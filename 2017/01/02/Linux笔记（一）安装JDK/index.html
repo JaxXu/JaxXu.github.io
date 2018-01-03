@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://jaxxu.github.io">
-  <title>Linux笔记（一）安装JDK | JaxXu&#39;Blog</title>
+  <title>Linux 笔记（一）安装 JDK | JaxXu&#39;Blog</title>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-  <meta name="description" content="适读人群：
-前言： 入手了一个新机子，记录一下折腾过程">
+  <meta name="description" content="适读人群：需要了解在 Linux 如何安装 JDK 的群体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux笔记（一）安装JDK">
-<meta property="og:url" content="http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/index.html">
+<meta property="og:title" content="Linux 笔记（一）安装 JDK">
+<meta property="og:url" content="http://jaxxu.github.io/2017/01/02/Linux笔记（一）安装JDK/index.html">
 <meta property="og:site_name" content="JaxXu'Blog">
-<meta property="og:description" content="适读人群：
-前言： 入手了一个新机子，记录一下折腾过程">
-<meta property="og:updated_time" content="2018-01-03T08:50:38.841Z">
+<meta property="og:description" content="适读人群：需要了解在 Linux 如何安装 JDK 的群体">
+<meta property="og:updated_time" content="2018-01-03T11:38:53.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux笔记（一）安装JDK">
-<meta name="twitter:description" content="适读人群：
-前言： 入手了一个新机子，记录一下折腾过程">
+<meta name="twitter:title" content="Linux 笔记（一）安装 JDK">
+<meta name="twitter:description" content="适读人群：需要了解在 Linux 如何安装 JDK 的群体">
   
     <link rel="alternative" href="/atom.xml" title="JaxXu&#39;Blog" type="application/atom+xml">
   
@@ -152,11 +149,11 @@
     
       <header class="article-header">
         <h1 class="article-title" itemprop="name">
-      Linux笔记（一）安装JDK
+      Linux 笔记（一）安装 JDK
     </h1>
         
-        <a href="/2017/05/11/Linux笔记（一）安装JDK/" class="archive-article-date">
-  	<time datetime="2017-05-11T08:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+        <a href="/2017/01/02/Linux笔记（一）安装JDK/" class="archive-article-date">
+  	<time datetime="2017-01-02T08:29:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
 </a>
         
       </header>
@@ -164,14 +161,60 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p><strong>适读人群</strong>：</p>
-<p><strong>前言</strong>： 入手了一个新机子，记录一下折腾过程</p>
+<p><strong>适读人群</strong>：需要了解在 Linux 如何安装 JDK 的群体</p>
 </blockquote>
 <a id="more"></a>
+<blockquote>
+<p>目前 JDK 最新版本为 <code>JDK 8u151</code></p>
+</blockquote>
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
-<li>检查JDK安装情况<code>java -version</code></li>
+<li><p>检查 JDK 安装情况</p>
+<p>  输入命令<code>java -version</code></p>
+<p>  如果响应如下内容</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java version &quot;1.8.0_151&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_151-b12)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)</div></pre></td></tr></table></figure>
+<p>  则已安装 JDK ，结束</p>
+</li>
+<li><p>下载 JDK 包</p>
+<blockquote>
+<p>这里仅提供JDK 8u151版本下载地址，需要其他版本请自行到<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">官方</a>下载</p>
+<p><strong>此处提供的 JDK 为本人七牛云存储版本，请自行校验 checksum 。<a href="https://www.oracle.com/webfolder/s/digest/8u151checksum.html" target="_blank" rel="external">官方checksum地址</a></strong></p>
+</blockquote>
+<p>  JDK 8u151 64位： <a href="http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz" target="_blank" rel="external">http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz</a></p>
+<p>  JDK 8u151 32位： <a href="http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-i586.tar.gz" target="_blank" rel="external">http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-i586.tar.gz</a></p>
+<p>  这里选择 64 位版本进行安装演示</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz</div></pre></td></tr></table></figure>
+</li>
+<li><p>解压JDK</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8u151-linux-x64.tar.gz -C /opt/program/</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips： 这里解压时通过<code>-C</code>指定了解压目录为 <code>/opt/program/</code></p>
+</blockquote>
+<p>  如果出现</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar: /opt/program: Cannot open: No such file or directory</div><div class="line">tar: Error is not recoverable: exiting now</div></pre></td></tr></table></figure>
+<p>  请先用以下命令创建 program 文件夹</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/program</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>
+<pre><code>解压完毕后，``/opt/program``目录下会出现``jdk1.8.0_151``为解压后JDK存放地址
+</code></pre><ul>
+<li><p>设置环境变量</p>
+<ol>
+<li><p>编辑配置文件<code>/etc/profile</code><br> 在文件后面添加以下内容</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># JDK</div><div class="line">JAVA_HOME=/opt/program/jdk1.8.0_151</div><div class="line">JRE_HOME=$JAVA_HOME/jre</div><div class="line">PATH=$PATH:$JAVA_HOME/bin</div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div><div class="line">export JAVA_HOME</div><div class="line">export JRE_HOME</div><div class="line">export PATH</div><div class="line">export CLASSPATH</div></pre></td></tr></table></figure>
+</li>
+<li><p>刷新环境变量</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看是否已经设置成功</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK 8官方地址</a></li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="external">JDK 7官方地址</a></li>
+</ul>
       
 
       
@@ -280,7 +323,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://jaxxu.github.io/2017/01/02/Linux笔记（一）安装JDK/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,7 +336,7 @@
 
   <div class="article">
     <div itemprop="articleBody" class="" style="margin: 30px 7.6923% 30px 7.6923%">
-      转载请附原文链接：<a href="http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/">http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/</a><br>
+      转载请附原文链接：<a href="http://jaxxu.github.io/2017/01/02/Linux笔记（一）安装JDK/">http://jaxxu.github.io/2017/01/02/Linux笔记（一）安装JDK/</a><br>
       <img src="http://ogtt5pngo.bkt.clouddn.com/license.png"><br>
       如无特别说明，本站文章均采用 <a href="http://creativecommons.org/licenses/by-nd/4.0/deed.zh">知识共享 署名-禁止演绎 4.0 国际许可协议</a>（Creative Commons BY-ND 4.0）进行许可。
     </div>
@@ -302,18 +345,18 @@
 
   <nav id="article-nav">
   
-    <a href="/2018/01/03/Linux笔记（二）ActiveMQ部署/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/11/部署 Let's Encrypt 免费 SSL 证书 ＋ Tomcat 支持/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux 笔记（二） ActiveMQ 部署
+          部署 Let&#39;s Encrypt 免费 SSL 证书 ＋ Tomcat 支持
         
       </div>
     </a>
   
   
-    <a href="/2017/05/11/部署 Let's Encrypt 免费 SSL 证书 ＋ Tomcat 支持/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">部署 Let&#39;s Encrypt 免费 SSL 证书 ＋ Tomcat 支持</div>
+    <a href="/2016/11/18/从Eclipse入坑IDEA(一)：IDEA导入SVN项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从Eclipse入坑IDEA(一)：IDEA导入SVN项目</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -328,7 +371,7 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/", 
+    url: "http://jaxxu.github.io/2017/01/02/Linux笔记（一）安装JDK/", 
     sourceId: "Linux笔记（一）安装JDK",
     productKey: "eaf4ca1d61eb4608af8830158c762048",
     target: "cloud-tie-wrapper"
@@ -437,6 +480,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ActiveMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
@@ -446,10 +493,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ActiveMQ</a>
               </li>
              
               <li class="article-tag-list-item">

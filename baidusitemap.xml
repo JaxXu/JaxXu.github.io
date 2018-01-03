@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://jaxxu.github.io/2017/01/02/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/</loc>
+    <lastmod>2018-01-03T11:38:53.302Z</lastmod>
+    <data>
+        <display>
+        <title>Linux 笔记（一）安装 JDK</title>
+        <pubTime>2017-01-02T08:29:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>JDK</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://jaxxu.github.io/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jaxxu.github.io/2018/01/03/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89ActiveMQ%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2018-01-03T10:38:45.946Z</lastmod>
     <data>
@@ -72,28 +94,6 @@
           
              
               <breadCrumb title="IDEA" url="http://jaxxu.github.io/categories/IDE/IDEA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jaxxu.github.io/2017/05/11/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/</loc>
-    <lastmod>2018-01-03T08:50:38.841Z</lastmod>
-    <data>
-        <display>
-        <title>Linux笔记（一）安装JDK</title>
-        <pubTime>2017-05-11T08:29:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>JDK</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="http://jaxxu.github.io/categories/Linux/"/>
           
         </display>
     </data>
