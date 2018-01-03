@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jaxxu.github.io/"/>
-  <updated>2017-05-11T08:34:54.781Z</updated>
+  <updated>2018-01-03T08:50:38.841Z</updated>
   <id>http://jaxxu.github.io/</id>
   
   <author>
@@ -16,11 +16,102 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux笔记（一）安装JDK</title>
+    <link href="http://jaxxu.github.io/2017/05/11/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/"/>
+    <id>http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/</id>
+    <published>2017-05-11T08:29:00.000Z</published>
+    <updated>2018-01-03T08:50:38.841Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>适读人群</strong>：</p>
+<p><strong>前言</strong>： 入手了一个新机子，记录一下折腾过程</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
+<li>检查JDK安装情况<code>java -version</code></li>
+</ul>
+<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;： 入手了一个新机子，记录一下折腾过程&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
+    
+      <category term="JDK" scheme="http://jaxxu.github.io/tags/JDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 笔记（二） ActiveMQ 部署</title>
+    <link href="http://jaxxu.github.io/2017/05/11/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89ActiveMQ%E9%83%A8%E7%BD%B2/"/>
+    <id>http://jaxxu.github.io/2017/05/11/Linux笔记（二）ActiveMQ部署/</id>
+    <published>2017-05-11T08:29:00.000Z</published>
+    <updated>2018-01-03T09:58:32.932Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>适读人群</strong>：入门 Linux ，想要了解 ActiveMQ 安装过程</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><blockquote>
+<p>目前 ActiveMQ 版本为<figure class="highlight plain"><figcaption><span>Release```，最低 JDK 版本要求为```1.8```。以下流程默认已经安装了 JDK 且最版本 >= ```1.8```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 下载 ActiveMQ 安装包并解压到当前目录</div><div class="line">    ```shell</div><div class="line">    wget http://mirrors.shuosc.org/apache//activemq/5.15.2/apache-activemq-5.15.2-bin.tar.gz</div><div class="line">    tar -zxvf apache-activemq-5.15.2-bin.tar.gz</div></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>解压后目录说明：
+- bin : 二进制文件目录
+- conf : 配置目录
+- data : 日志文件目录
+- webapps : 系统管理员 web 控制界面文件
+</code></pre><ul>
+<li><p>启动 ActiveMQ 服务</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apache-activemq-5.15.2/bin/activemq start</div></pre></td></tr></table></figure>
+<p>  控制台显示以下内容则表示启动成功</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO: Loading &apos;/root/activemq/apache-activemq-5.15.2//bin/env&apos;</div><div class="line">INFO: Using java &apos;/root/app/jdk1.8.0_151/bin/java&apos;</div><div class="line">INFO: Starting - inspect logfiles specified in logging.properties and log4j.properties to get details</div><div class="line">INFO: pidfile created : &apos;/root/activemq/apache-activemq-5.15.2//data/activemq.pid&apos; (pid &apos;10664&apos;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>至此，ActiveMQ 启动完成，启动成功后会启用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```8161```为 Web 管理控制端口，可以通过```http://ip:8161```进入管理页面，默认账户```admin```密码```admin</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><figcaption><span>ActiveMQ 通讯端口</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 常见配置介绍</div><div class="line"></div><div class="line">- 修改 Web 管理控制访问端口</div><div class="line">    因为 ActiveMQ 使用了 jetty 进行管理，所以我们只需要在 conf/jetty.xml 中对其进行配置即可。对如下位置进行修改即可。</div><div class="line">    ```xml</div><div class="line">    &lt;bean id=&quot;jettyPort&quot; class=&quot;org.apache.activemq.web.WebConsolePort&quot; init-method=&quot;start&quot;&gt;</div><div class="line">             &lt;!-- the default port number for the web console --&gt;</div><div class="line">        &lt;property name=&quot;host&quot; value=&quot;0.0.0.0&quot;/&gt;</div><div class="line">        &lt;property name=&quot;port&quot; value=&quot;8161&quot;/&gt;</div><div class="line">    &lt;/bean&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>修改 Web 管理控制访问账户密码<br>  Web 管理控制访问账户密码定义放置在 conf/jetty-realm.properties 中。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Defines users that can access the web (console, demo, etc.)</div><div class="line"># username: password [,rolename ...]</div><div class="line">admin: admin, admin</div><div class="line">user: user, user</div></pre></td></tr></table></figure>
+<p>  此处格式为：<figure class="highlight plain"><figcaption><span>密码, 角色```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 修改 ActiveMQ 通讯端口</div><div class="line">    通讯端口的定义放置在 conf/activemq.xml 中。对如下位置进行修改即可。</div><div class="line">    ```xml</div><div class="line">    &lt;transportConnectors&gt;</div><div class="line">        &lt;!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB --&gt;</div><div class="line">        &lt;transportConnector name=&quot;openwire&quot; uri=&quot;tcp://0.0.0.0:61616?maximumConnections=1000&amp;amp;wireFormat.maxFrameSize=104857600&quot;/&gt;</div><div class="line">        &lt;transportConnector name=&quot;amqp&quot; uri=&quot;amqp://0.0.0.0:5672?maximumConnections=1000&amp;amp;wireFormat.maxFrameSize=104857600&quot;/&gt;</div><div class="line">        &lt;transportConnector name=&quot;stomp&quot; uri=&quot;stomp://0.0.0.0:61613?maximumConnections=1000&amp;amp;wireFormat.maxFrameSize=104857600&quot;/&gt;</div><div class="line">        &lt;transportConnector name=&quot;mqtt&quot; uri=&quot;mqtt://0.0.0.0:1883?maximumConnections=1000&amp;amp;wireFormat.maxFrameSize=104857600&quot;/&gt;</div><div class="line">        &lt;transportConnector name=&quot;ws&quot; uri=&quot;ws://0.0.0.0:61614?maximumConnections=1000&amp;amp;wireFormat.maxFrameSize=104857600&quot;/&gt;</div><div class="line">    &lt;/transportConnectors&gt;</div></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<li><a href="http://activemq.apache.org" target="_blank" rel="external">ActiveMQ 官网</a></li>
+<li><a href="http://activemq.apache.org/getting-started.html" target="_blank" rel="external">ActiveMQ 入门</a></li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;：入门 Linux ，想要了解 ActiveMQ 安装过程&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
+    
+      <category term="ActiveMQ" scheme="http://jaxxu.github.io/tags/ActiveMQ/"/>
+    
+  </entry>
+  
+  <entry>
     <title>部署 Let&#39;s Encrypt 免费 SSL 证书 ＋ Tomcat 支持</title>
     <link href="http://jaxxu.github.io/2017/05/11/%E9%83%A8%E7%BD%B2%20Let&#39;s%20Encrypt%20%E5%85%8D%E8%B4%B9%20SSL%20%E8%AF%81%E4%B9%A6%20%EF%BC%8B%20Tomcat%20%E6%94%AF%E6%8C%81/"/>
     <id>http://jaxxu.github.io/2017/05/11/部署 Let&#39;s Encrypt 免费 SSL 证书 ＋ Tomcat 支持/</id>
     <published>2017-05-11T08:29:00.000Z</published>
-    <updated>2017-05-11T08:34:54.781Z</updated>
+    <updated>2018-01-03T08:51:05.497Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>前言</strong>： 最近公司要用到https，收费的嘿嘿，公司是不可能支持的，只能开始捣鼓免费的 Let’s Encrypt 证书~</p>
@@ -88,16 +179,14 @@
     
     </summary>
     
-      <category term="IntelliJ IDEA" scheme="http://jaxxu.github.io/categories/IntelliJ-IDEA/"/>
-    
-      <category term="IDE" scheme="http://jaxxu.github.io/categories/IntelliJ-IDEA/IDE/"/>
-    
-      <category term="Java" scheme="http://jaxxu.github.io/categories/IntelliJ-IDEA/IDE/Java/"/>
-    
-      <category term="HTTPS" scheme="http://jaxxu.github.io/categories/IntelliJ-IDEA/IDE/Java/HTTPS/"/>
+      <category term="HTTPS" scheme="http://jaxxu.github.io/categories/HTTPS/"/>
     
     
       <category term="IDEA" scheme="http://jaxxu.github.io/tags/IDEA/"/>
+    
+      <category term="IDE" scheme="http://jaxxu.github.io/tags/IDE/"/>
+    
+      <category term="Tomcat" scheme="http://jaxxu.github.io/tags/Tomcat/"/>
     
       <category term="HTTPS" scheme="http://jaxxu.github.io/tags/HTTPS/"/>
     
@@ -108,10 +197,11 @@
     <link href="http://jaxxu.github.io/2016/11/18/%E4%BB%8EEclipse%E5%85%A5%E5%9D%91IDEA(%E4%B8%80)%EF%BC%9AIDEA%E5%AF%BC%E5%85%A5SVN%E9%A1%B9%E7%9B%AE/"/>
     <id>http://jaxxu.github.io/2016/11/18/从Eclipse入坑IDEA(一)：IDEA导入SVN项目/</id>
     <published>2016-11-18T06:25:00.000Z</published>
-    <updated>2016-12-02T08:44:16.000Z</updated>
+    <updated>2018-01-03T08:51:05.468Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p><strong>前言</strong>：自从用上了IDEA之后就再也回不去Eclipse了，为了愉快的和公司的小伙伴们协作，网上IDEA资料又偏少，索性自己捣鼓了一下，跟大家分享一下</p>
+<p><strong>适读人群</strong>： 想从Eclipse的开发者</p>
+<p><strong>前言</strong>： 自从用上了IDEA之后就再也回不去Eclipse了，为了愉快的和公司的小伙伴们协作，网上IDEA资料又偏少，索性自己捣鼓了一下，跟大家分享一下</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="安装SVN插件"><a href="#安装SVN插件" class="headerlink" title="安装SVN插件"></a>安装SVN插件</h2><ol>
@@ -172,11 +262,22 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;：自从用上了IDEA之后就再也回不去Eclipse了，为了愉快的和公司的小伙伴们协作，网上IDEA资料又偏少，索性自己捣鼓了一下，跟大家分享一下&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;： 想从Eclipse的开发者&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;： 自从用上了IDEA之后就再也回不去Eclipse了，为了愉快的和公司的小伙伴们协作，网上IDEA资料又偏少，索性自己捣鼓了一下，跟大家分享一下&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
+      <category term="IDE" scheme="http://jaxxu.github.io/categories/IDE/"/>
+    
+      <category term="IDEA" scheme="http://jaxxu.github.io/categories/IDE/IDEA/"/>
+    
+    
+      <category term="IDEA" scheme="http://jaxxu.github.io/tags/IDEA/"/>
+    
+      <category term="SVN" scheme="http://jaxxu.github.io/tags/SVN/"/>
+    
+      <category term="Eclipse" scheme="http://jaxxu.github.io/tags/Eclipse/"/>
     
   </entry>
   
