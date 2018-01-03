@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jaxxu.github.io/"/>
-  <updated>2018-01-03T08:50:38.841Z</updated>
+  <updated>2018-01-03T10:36:19.564Z</updated>
   <id>http://jaxxu.github.io/</id>
   
   <author>
@@ -16,46 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Linux笔记（一）安装JDK</title>
-    <link href="http://jaxxu.github.io/2017/05/11/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/"/>
-    <id>http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/</id>
-    <published>2017-05-11T08:29:00.000Z</published>
-    <updated>2018-01-03T08:50:38.841Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>适读人群</strong>：</p>
-<p><strong>前言</strong>： 入手了一个新机子，记录一下折腾过程</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
-<li>检查JDK安装情况<code>java -version</code></li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;： 入手了一个新机子，记录一下折腾过程&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://jaxxu.github.io/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
-    
-      <category term="JDK" scheme="http://jaxxu.github.io/tags/JDK/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux 笔记（二） ActiveMQ 部署</title>
-    <link href="http://jaxxu.github.io/2017/05/11/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89ActiveMQ%E9%83%A8%E7%BD%B2/"/>
-    <id>http://jaxxu.github.io/2017/05/11/Linux笔记（二）ActiveMQ部署/</id>
-    <published>2017-05-11T08:29:00.000Z</published>
-    <updated>2018-01-03T09:58:32.932Z</updated>
+    <link href="http://jaxxu.github.io/2018/01/03/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89ActiveMQ%E9%83%A8%E7%BD%B2/"/>
+    <id>http://jaxxu.github.io/2018/01/03/Linux笔记（二）ActiveMQ部署/</id>
+    <published>2018-01-03T10:36:08.000Z</published>
+    <updated>2018-01-03T10:36:19.564Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>适读人群</strong>：入门 Linux ，想要了解 ActiveMQ 安装过程</p>
@@ -103,6 +68,41 @@
       <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
     
       <category term="ActiveMQ" scheme="http://jaxxu.github.io/tags/ActiveMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux笔记（一）安装JDK</title>
+    <link href="http://jaxxu.github.io/2017/05/11/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/"/>
+    <id>http://jaxxu.github.io/2017/05/11/Linux笔记（一）安装JDK/</id>
+    <published>2017-05-11T08:29:00.000Z</published>
+    <updated>2018-01-03T08:50:38.841Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>适读人群</strong>：</p>
+<p><strong>前言</strong>： 入手了一个新机子，记录一下折腾过程</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
+<li>检查JDK安装情况<code>java -version</code></li>
+</ul>
+<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前言&lt;/strong&gt;： 入手了一个新机子，记录一下折腾过程&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
+    
+      <category term="JDK" scheme="http://jaxxu.github.io/tags/JDK/"/>
     
   </entry>
   
