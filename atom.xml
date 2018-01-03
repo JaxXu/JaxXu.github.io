@@ -84,6 +84,86 @@
   </entry>
   
   <entry>
+    <title>Linux 笔记（一）安装 JDK</title>
+    <link href="http://jaxxu.github.io/2018/01/02/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/"/>
+    <id>http://jaxxu.github.io/2018/01/02/Linux笔记（一）安装JDK/</id>
+    <published>2018-01-02T08:29:00.000Z</published>
+    <updated>2018-01-03T11:44:29.980Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>适读人群</strong>：需要了解在 Linux 如何安装 JDK 的群体</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>目前 JDK 最新版本为 <code>JDK 8u151</code></p>
+</blockquote>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
+<li><p>检查 JDK 安装情况</p>
+<p>  输入命令<code>java -version</code></p>
+<p>  如果响应如下内容</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java version &quot;1.8.0_151&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_151-b12)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)</div></pre></td></tr></table></figure>
+<p>  则已安装 JDK ，结束</p>
+</li>
+<li><p>下载 JDK 包</p>
+<blockquote>
+<p>这里仅提供JDK 8u151版本下载地址，需要其他版本请自行到<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">官方</a>下载</p>
+<p><strong>此处提供的 JDK 为本人七牛云存储版本，请自行校验 checksum 。<a href="https://www.oracle.com/webfolder/s/digest/8u151checksum.html" target="_blank" rel="external">官方checksum地址</a></strong></p>
+</blockquote>
+<p>  JDK 8u151 64位： <a href="http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz" target="_blank" rel="external">http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz</a></p>
+<p>  JDK 8u151 32位： <a href="http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-i586.tar.gz" target="_blank" rel="external">http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-i586.tar.gz</a></p>
+<p>  这里选择 64 位版本进行安装演示</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz</div></pre></td></tr></table></figure>
+</li>
+<li><p>解压JDK</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8u151-linux-x64.tar.gz -C /opt/program/</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips： 这里解压时通过<code>-C</code>指定了解压目录为 <code>/opt/program/</code></p>
+</blockquote>
+<p>  如果出现</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar: /opt/program: Cannot open: No such file or directory</div><div class="line">tar: Error is not recoverable: exiting now</div></pre></td></tr></table></figure>
+<p>  请先用以下命令创建 program 文件夹</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/program</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>解压完毕后，``/opt/program``目录下会出现``jdk1.8.0_151``为解压后JDK存放地址
+</code></pre><ul>
+<li><p>设置环境变量</p>
+<ol>
+<li><p>编辑配置文件<code>/etc/profile</code><br> 在文件后面添加以下内容</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># JDK</div><div class="line">JAVA_HOME=/opt/program/jdk1.8.0_151</div><div class="line">JRE_HOME=$JAVA_HOME/jre</div><div class="line">PATH=$PATH:$JAVA_HOME/bin</div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div><div class="line">export JAVA_HOME</div><div class="line">export JRE_HOME</div><div class="line">export PATH</div><div class="line">export CLASSPATH</div></pre></td></tr></table></figure>
+</li>
+<li><p>刷新环境变量</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看是否已经设置成功</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK 8官方地址</a></li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="external">JDK 7官方地址</a></li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;：需要了解在 Linux 如何安装 JDK 的群体&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
+    
+      <category term="JDK" scheme="http://jaxxu.github.io/tags/JDK/"/>
+    
+  </entry>
+  
+  <entry>
     <title>部署 Let&#39;s Encrypt 免费 SSL 证书 ＋ Tomcat 支持</title>
     <link href="http://jaxxu.github.io/2017/05/11/%E9%83%A8%E7%BD%B2%20Let&#39;s%20Encrypt%20%E5%85%8D%E8%B4%B9%20SSL%20%E8%AF%81%E4%B9%A6%20%EF%BC%8B%20Tomcat%20%E6%94%AF%E6%8C%81/"/>
     <id>http://jaxxu.github.io/2017/05/11/部署 Let&#39;s Encrypt 免费 SSL 证书 ＋ Tomcat 支持/</id>
@@ -166,86 +246,6 @@
       <category term="Tomcat" scheme="http://jaxxu.github.io/tags/Tomcat/"/>
     
       <category term="HTTPS" scheme="http://jaxxu.github.io/tags/HTTPS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux 笔记（一）安装 JDK</title>
-    <link href="http://jaxxu.github.io/2017/01/02/Linux%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85JDK/"/>
-    <id>http://jaxxu.github.io/2017/01/02/Linux笔记（一）安装JDK/</id>
-    <published>2017-01-02T08:29:00.000Z</published>
-    <updated>2018-01-03T11:38:53.302Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>适读人群</strong>：需要了解在 Linux 如何安装 JDK 的群体</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>目前 JDK 最新版本为 <code>JDK 8u151</code></p>
-</blockquote>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ul>
-<li><p>检查 JDK 安装情况</p>
-<p>  输入命令<code>java -version</code></p>
-<p>  如果响应如下内容</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java version &quot;1.8.0_151&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_151-b12)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)</div></pre></td></tr></table></figure>
-<p>  则已安装 JDK ，结束</p>
-</li>
-<li><p>下载 JDK 包</p>
-<blockquote>
-<p>这里仅提供JDK 8u151版本下载地址，需要其他版本请自行到<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">官方</a>下载</p>
-<p><strong>此处提供的 JDK 为本人七牛云存储版本，请自行校验 checksum 。<a href="https://www.oracle.com/webfolder/s/digest/8u151checksum.html" target="_blank" rel="external">官方checksum地址</a></strong></p>
-</blockquote>
-<p>  JDK 8u151 64位： <a href="http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz" target="_blank" rel="external">http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz</a></p>
-<p>  JDK 8u151 32位： <a href="http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-i586.tar.gz" target="_blank" rel="external">http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-i586.tar.gz</a></p>
-<p>  这里选择 64 位版本进行安装演示</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://ogtt5pngo.bkt.clouddn.com/tar/jdk/jdk-8u151-linux-x64.tar.gz</div></pre></td></tr></table></figure>
-</li>
-<li><p>解压JDK</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8u151-linux-x64.tar.gz -C /opt/program/</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Tips： 这里解压时通过<code>-C</code>指定了解压目录为 <code>/opt/program/</code></p>
-</blockquote>
-<p>  如果出现</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar: /opt/program: Cannot open: No such file or directory</div><div class="line">tar: Error is not recoverable: exiting now</div></pre></td></tr></table></figure>
-<p>  请先用以下命令创建 program 文件夹</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/program</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<pre><code>解压完毕后，``/opt/program``目录下会出现``jdk1.8.0_151``为解压后JDK存放地址
-</code></pre><ul>
-<li><p>设置环境变量</p>
-<ol>
-<li><p>编辑配置文件<code>/etc/profile</code><br> 在文件后面添加以下内容</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># JDK</div><div class="line">JAVA_HOME=/opt/program/jdk1.8.0_151</div><div class="line">JRE_HOME=$JAVA_HOME/jre</div><div class="line">PATH=$PATH:$JAVA_HOME/bin</div><div class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</div><div class="line">export JAVA_HOME</div><div class="line">export JRE_HOME</div><div class="line">export PATH</div><div class="line">export CLASSPATH</div></pre></td></tr></table></figure>
-</li>
-<li><p>刷新环境变量</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看是否已经设置成功</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK 8官方地址</a></li>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank" rel="external">JDK 7官方地址</a></li>
-</ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;适读人群&lt;/strong&gt;：需要了解在 Linux 如何安装 JDK 的群体&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://jaxxu.github.io/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://jaxxu.github.io/tags/Linux/"/>
-    
-      <category term="JDK" scheme="http://jaxxu.github.io/tags/JDK/"/>
     
   </entry>
   
